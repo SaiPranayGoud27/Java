@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bharat Canteen Menu</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* Styles for the image slider */
+      .image-slider {
+        position: relative;
+        width: 100%;
+        max-width: 600px; /* Adjust as needed */
+        overflow: hidden;
+        margin: auto;
+      }
+
+      .slides {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        width: 100%; /* Adjust based on number of images */
+      }
+
+      .slide {
+        min-width: 100%;
+        box-sizing: border-box;
+      }
+
+      .slide img {
+        width: 100%;
+        height: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Section -->
+    <header class="header">
+      <h1>Bharat Canteen Menu</h1>
+    </header>
+
+    <!-- Image Slider Section -->
+    <div class="image-slider">
+      <div class="slides">
+        <div class="slide">
+          <img src="images/burger.jpeg" alt="Image 1" />
+        </div>
+        <div class="slide">
+          <img src="images/tea.jpg" alt="Image 2" />
+        </div>
+        <div class="slide">
+          <img src="images/pizza.jpeg" alt="Image 3" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Category Section -->
+    <div class="categories">
+      <a href="snacks.html" class="category-btn">Snacks</a>
+      <a href="main-courses.html" class="category-btn">Main Courses</a>
+      <a href="beverages.html" class="category-btn">Beverages</a>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+      <p>Contact us: +91-91234-56789 | biet.ac.in</p>
+      <p>Hours: Mon-Sat  8:00 AM - 4:00 PM</p>
+      <p>Location: BIET College Campus</p>
+    </footer>
+
+    <!-- JavaScript for image slider -->
+    <script>
+      let currentIndex = 0;
+      const slides = document.querySelector('.slides');
+      const totalSlides = document.querySelectorAll('.slide').length;
+
+      function showNextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        const offset = -currentIndex * 100; // Move to the next slide
+        slides.style.transform = `translateX(${offset}%)`;
+      }
+
+      setInterval(showNextSlide, 3000); // Change slide every 3 seconds
+    </script>
+  </body>
+</html>
